@@ -1,0 +1,1449 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Abhaya+Libre:wght@400;700&display=swap');
+
+/*----------VARIABLES COLORES------------*/
+:root {
+  /* Colores */
+
+  --primary-color: #566d57;
+  --secondary-color: #4e583b;
+  --verde-azulado: #52797b;
+  --purpura-oscuro: #42346b;
+  --verde-palido: #9bab8d;
+
+  /* Fuentes */
+  --primary-font: 'Satisfy', cursive;
+  /* La similar a Lucida */
+  --secondary-font: 'Abhaya Libre', serif;
+  /* La similar a Mongolian */
+}
+
+/******************************************BANERS**************************************************/
+
+.baner-general img {
+  width: 100%;
+  height: 450px;       /* Altura fija para PC */
+  object-fit: cover;   /* ¡CLAVE! Corta los bordes excedentes en lugar de aplastar la foto */
+  display: block;      /* Elimina espacios en blanco extraños debajo de la imagen */
+}
+
+.body h1{
+  width: 0px;
+  height: 0px;
+}
+
+
+/*------------------------------NAVBAR----------------------------------------*/
+
+.menu {
+  display: flex;
+  height: 100%;
+  width: 90%;
+  gap: 3rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.menu img {
+  width: 110px;
+  height: 110px;
+}
+
+.menu li {
+  list-style: none;
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-family: var(--secondary-font);
+  font-size: 1.5rem;
+  position: relative;
+}
+
+/*--------------------------------------BANER-----------------------------------------------*/
+.baner{
+  align-items: center;
+  justify-items: center;
+}
+
+.content-baner {
+  margin-top: 50px;
+  width: 80%;
+  margin-bottom: 200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 20px 40px;
+  justify-content: center;
+  height: 500px;
+}
+
+.content-baner h1 {
+  text-align: center;
+  grid-column: 1;
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+  font-size: 50px;
+}
+
+/* 1. El contenedor ahora ocupa el lugar en el Grid */
+.contenedor-imagenes {
+  grid-column: 2;
+  grid-row: 1;
+  /* Asegura que se alinee en la primera fila junto al texto */
+  position: relative;
+  /* Clave para que la imagen absoluta se guíe de este cuadro */
+  width: 500px;
+  height: 500px;
+  /* Mismo tamaño para que encajen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* 2. Estilo para el trazo verde (Fondo) */
+.imagen-fondo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 3. Estilo para las frutas (Encima) */
+.imagen-frutas {
+  position: absolute;
+  /* Se despega y flota sobre el fondo */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Centrado matemático perfecto */
+  width: 85%;
+  /* Un poco más pequeña para que el trazo verde sobresalga por los lados */
+  border-radius: 50%;
+  /* Conserva tu diseño circular */
+  object-fit: cover;
+  border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+  border: 4px solid var(--verde-palido);
+  box-shadow: 4px 6px 18px rgba(86, 109, 87, 0.18);
+}
+
+.content-baner a {
+  text-align: center;
+  justify-self: center;
+  align-content: center;
+  font-family: var(--secondary-font);
+  margin-bottom: 50px;
+
+  width: 170px;
+  height: 40px;
+
+  text-decoration: none;
+  color: #fff;
+
+  /* cápsula suave */
+  border-radius: 999px;
+
+  /* efecto brillante */
+  background: linear-gradient(to bottom,
+      #7e8775,
+      var(--secondary-color));
+
+  /* brillo y profundidad */
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.25),
+    0 2px 6px rgba(0, 0, 0, 0.18);
+
+  transition: all 0.3s ease;
+}
+
+/* efecto al pasar el mouse */
+.content-baner a:hover {
+  filter: brightness(1.08);
+
+  box-shadow:
+    inset 0 1px 3px rgba(255, 255, 255, 0.35),
+    0 4px 10px rgba(0, 0, 0, 0.22);
+}
+
+/*------------------------------NAVBAR----------------------------------------*/
+
+.content-marca img {
+  width: 130px;
+  /* Ajustado un poco para que mantenga la proporción de tu captura */
+  height: auto;
+  display: block;
+}
+
+/*------------------------------Footer----------------------------------------*/
+
+.footer {
+  width: 100%;
+  border: 2px solid var(--secondary-color);
+  border-radius: 12px;
+
+}
+
+.content-footer {
+  display: flex;
+  justify-content: space-around;
+  /* Distribuye las columnas uniformemente */
+  align-items: center;
+  /* Alinea verticalmente las columnas y divisores */
+}
+
+/* Divisores verticales */
+
+.divider {
+  width: 2px;
+  height: 140px;
+  /* Altura de la línea divisoria */
+  background-color: var(--secondary-color);
+  opacity: 0.5;
+  /* Por si quieres que sea sutil como en la imagen */
+}
+
+
+/* Títulos de sección */
+.footer h3 {
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d4a1e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+/* --- MARCA --- */
+.content-marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-left: 100px;
+}
+
+.content-marca img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.content-marca p {
+  font-size: 13px;
+  color: #333;
+  text-align: center;
+  font-family: var(--secondary-font);
+}
+
+/* --- NAVEGACIÓN --- */
+.content-navegacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+}
+
+.content-navegacion ul {
+  list-style: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.content-navegacion ul li {
+  font-size: 13.5px;
+  color: #222;
+  margin-bottom: 6px;
+  font-family: 'Georgia', serif;
+}
+
+/* --- CONTACTOS --- */
+.content-contactos {
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.content-contactos h2 {
+  width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.contact-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.contact-item span {
+  font-size: 13px;
+  color: #222;
+  font-family: 'Georgia', serif;
+}
+
+/* --- COPYRIGHT --- */
+.footer-copyright {
+  width: 100%;
+  padding-left: 1rem;
+}
+
+.footer-copyright p {
+  width: 50%;
+  align-self: center;
+  font-size: 12px;
+  grid-column: 1;
+  grid-row: 1;
+  color: #444;
+  font-family: 'Georgia', serif;
+  border-top: 1px solid #ccc;
+  padding-top: 8px;
+}
+
+/*------------------------------Escuelavidabuena----------------------------------------*/
+
+.evb-main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 40px 30px 40px;
+  /* menos padding arriba y abajo */
+}
+
+
+.evb-titulo {
+  margin-left: 500px;
+  font-family: var(--secondary-font);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--verde-palido);
+  padding-bottom: 12px;
+  display: inline-block;
+}
+
+.evb-contenido {
+  margin-left: 250px;
+  justify-items: center;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  /* menos gap entre columnas */
+  align-items: center;
+  /* centra verticalmente foto con servicios */
+  margin-bottom: 20px;
+  /* menos espacio abajo */
+}
+
+.evb-col-izq {
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* menos espacio entre foto y texto */
+}
+
+.evb-foto {
+  width: 100%;
+  max-width: 320px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  border: 4px solid var(--verde-palido);
+  box-shadow: 4px 6px 18px rgba(86, 109, 87, 0.18);
+}
+
+.evb-descripcion {
+  font-family: var(--secondary-font);
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+.evb-col-der {
+  width: 80%;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* menos espacio entre servicios */
+  /* quita el padding innecesario */
+}
+
+
+.evb-servicio {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.evb-servicio-icono {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #c8d5c0;
+}
+
+.evb-servicio-nombre {
+  font-family: var(--secondary-font);
+  font-size: 1.15rem;
+  color: #3a3a3a;
+  font-weight: 400;
+}
+
+.evb-frase {
+  text-align: center;
+  margin-top: 10px;
+  /* menos espacio antes de la frase */
+  padding: 10px 0;
+}
+
+.evb-frase p {
+  font-family: var(--primary-font);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-style: italic;
+}
+
+/*------------------------------Nosotros----------------------------------------*/
+
+.nos-main {
+  width: 100%;
+  margin: 0 auto;
+  justify-items: center;
+  padding: 40px 40px 60px 40px;
+}
+
+/* --- Intro: texto + foto --- */
+.nos-intro {
+  margin-top: 150px;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+
+}
+
+.nos-intro-texto {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nos-intro-texto p {
+  font-family: var(--secondary-font);
+  font-size: 1.3rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.nos-intro-foto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.nos-intro-foto img {
+  width: 100%;
+  max-width: 320px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  box-shadow: 4px 6px 18px rgba(86, 109, 87, 0.18);
+}
+
+.nos-foto-titulo {
+  font-family: var(--secondary-font);
+  font-size: 2rem;
+  /* MÁS GRANDE */
+  font-weight: 700;
+  color: #4D7C4D;
+  /* VERDE */
+  text-align: center;
+  margin-top: -5px;
+}
+
+.nos-foto-subtitulo {
+  font-family: var(--secondary-font);
+  font-size: 1.6rem;
+  /* MÁS GRANDE */
+  color: #6B8E6B;
+  /* VERDE MÁS SUAVE */
+  text-align: center;
+  margin-top: -8px;
+}
+
+/* --- Misión y Visión --- */
+.nos-mision-vision {
+  width: 80%;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.nos-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 5rem;
+}
+
+.nos-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.nos-card h2 {
+  font-family: var(--secondary-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3a3a3a;
+  letter-spacing: 2px;
+}
+
+.nos-card p {
+  font-family: var(--secondary-font);
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* --- Modelo de Bienestar --- */
+.nos-modelo {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.nos-modelo-titulo {
+  font-family: var(--secondary-font);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.nos-modelo-contenido {
+  display: grid;
+  grid-template-columns: 1.40fr 0.60fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+.nos-modelo-img {
+  width: 70%;
+  object-fit: contain;
+}
+
+.nos-modelo-texto {
+  justify-self: start;
+  background-color: #d4e8c2;
+  border-radius: 12px;
+  padding: 24px;
+  margin-right: 100px;
+}
+
+.nos-modelo-texto p {
+  font-family: var(--secondary-font);
+  font-size: 1.2rem;
+  color: #3a3a3a;
+  line-height: 1.7;
+}
+
+.nos-modelo-iconos {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.nos-icono-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.nos-frase {
+  text-align: center;
+  padding: 10px 0 20px 0;
+}
+
+.nos-frase p {
+  font-family: var(--primary-font);
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-style: italic;
+}
+
+/*------------------------------TIENDA----------------------------------------*/
+
+.baner2-tienda {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 80%;
+  display: flex;
+  justify-self: center;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.colum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.baner2-tienda img {
+  width: 150px;
+  height: 150px;
+}
+
+.baner2-tienda h2 {
+  color: var(--secondary-color);
+  font-family: var(--secondary-font);
+  font-size: 1.1rem;
+  /* Ajusta según veas necesario */
+  margin: 0;
+}
+
+/* Un solo estilo para todos los divisores */
+.dividert {
+  width: 1px;
+  height: 140px;
+  /* Altura de la línea divisoria */
+  background-color: var(--secondary-color);
+  opacity: 0.5;
+  /* Por si quieres que sea sutil como en la imagen */
+}
+
+.productos {
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1.5rem;
+  margin-bottom: 100px;
+  text-align: center;
+  max-width: 1500px;       /* ¡CLAVE! Evita que en PC las tarjetas sean infinitas */
+  margin-left: auto;       /* Centra el contenedor principal */
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.productos h2 {
+  font-family: var(--primary-font);
+}
+
+.productos h3 {
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-family: var(--secondary-font);
+  justify-self: center;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1rem;
+  
+}
+
+.productos h2 {
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.card {
+  border: 2px solid var(--secondary-color);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  min-width: 250px;        /* Evita que se aplasten demasiado en laptops */
+  max-width: 550px;        /* Un tamaño elegante para PC */
+  background-color: #fff;
+  padding-bottom: 1.5rem;  /* Aire abajo del precio */
+}
+
+.card img {
+  padding: 1rem;
+  border-radius: 10%;
+}
+
+.pedidos {
+  width: 100%;
+}
+
+.content-pedidos {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  /* width: 80%; */
+  display: flex;
+  justify-self: center;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #3a3a3a;
+  border-radius: 10%;
+}
+
+.colum-iz {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.colum-iz img {
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.colum-iz h2 {
+  grid-column: 2;
+  font-family: var(--secondary-font);
+  color: var(--secondary-color);
+}
+
+.colum-iz p {
+  grid-column: 2;
+  font-family: var(--secondary-font);
+}
+
+.colum-der h2 {
+  font-family: var(--secondary-font);
+  color: var(--secondary-color);
+}
+
+.colum-der {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.colum-der a {
+  text-align: center;
+  justify-self: center;
+  align-content: center;
+  font-family: var(--secondary-font);
+  grid-column: 2;
+  margin-top: 50px;
+  width: 300px;
+  height: 40px;
+
+  text-decoration: none;
+  color: #fff;
+
+  /* cápsula suave */
+  border-radius: 999px;
+
+  /* efecto brillante */
+  background: linear-gradient(to bottom,
+      #7e8775,
+      var(--secondary-color));
+
+  /* brillo y profundidad */
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.25),
+    0 2px 6px rgba(0, 0, 0, 0.18);
+
+  transition: all 0.3s ease;
+}
+
+/* ==========================================
+           CELULARES (Hasta 480px)
+   ========================================== */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    /* Opcional: reducimos un poco la fuente en celulares */
+  }
+
+
+  /**************************FOOTER*******************************/
+
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+
+  .divider {
+    width: 0px;
+  }
+
+  .content-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1;
+  }
+
+  .content-marca {
+    margin: 0;
+  }
+
+  .content-contactos {
+    margin: 0;
+  }
+
+  .footer-copyright {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /**************************NAVBAR*************************************/
+
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 300px;
+  }
+
+  /*************************BANER*****************************************/
+
+  .content-baner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 300px;
+  }
+
+  .baner-general img {
+    height: 300px;     /* En celulares 450px puede ser muy alto, 300px queda perfecto para formato vertical */
+  }
+
+  .content-baner a {
+    width: 200px;
+    margin-top: 50px;
+  }
+
+  /**************************TIENDA***************************************************/
+
+  .baner2-tienda {
+    display: grid;
+    /* Creamos 2 columnas que se dividen el espacio a la mitad (50% cada una) */
+    grid-template-columns: repeat(2, 1fr);
+    /* Añadimos separación vertical y horizontal entre los elementos */
+    gap: 30px 20px;
+    padding: 20px;
+  }
+
+  /* Ocultamos las líneas divisorias en celular para que no rompan la cuadrícula */
+  .baner2-tienda .dividert {
+    display: none;
+  }
+
+  /* Ajustes opcionales para que las columnas se vean estéticas */
+  /* .colum {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .colum img {
+        max-width: 80px; 
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .colum h1 {
+        font-size: 14px;
+        margin: 0;
+    } */
+
+  .productos {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+
+  .card p {
+    font-size: 20px;
+    justify-self: center;
+    gap: 5;
+  }
+
+  .pedidos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-pedidos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colum-iz {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  /**********************ESCUELA*****************************************/
+
+  .evb-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-items: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  .evb-titulo {
+    margin-left: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .evb-contenido {
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+  }
+
+  /*****************************NOSOTROS****************************************/
+
+  .nos-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-mision-vision {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-modelo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-modelo-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin: 0;
+  }
+
+  .nos-modelo-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-modelo-img {
+    margin: 0;
+  }
+
+  .nos-modelo-iconos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* ==========================================
+           TABLETS (Hasta 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    /* Opcional: reducimos un poco la fuente en celulares */
+  }
+
+
+  /**************************FOOTER*******************************/
+
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+
+  .divider {
+    width: 0px;
+  }
+
+  .content-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1;
+  }
+
+  .content-marca {
+    margin: 0;
+  }
+
+  .content-contactos {
+    margin: 0;
+  }
+
+  .footer-copyright {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /**************************NAVBAR*************************************/
+
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 300px;
+  }
+
+  /*************************BANER  INDEX*****************************************/
+
+  .baner{
+    margin-top: 500px;
+    margin-bottom: 500px;
+  }
+
+  .content-baner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 300px;
+  }
+
+  .baner-general{
+    margin-top: -250px;
+  }
+
+  
+
+
+  .content-baner a {
+    width: 200px;
+    height: 100px;
+    margin-top: 50px;
+  }
+
+  /**************************TIENDA***************************************************/
+
+  .baner2-tienda {
+    display: grid;
+    /* Creamos 2 columnas que se dividen el espacio a la mitad (50% cada una) */
+    grid-template-columns: repeat(2, 1fr);
+    /* Añadimos separación vertical y horizontal entre los elementos */
+    gap: 30px 20px;
+    padding: 20px;
+  }
+
+  /* Ocultamos las líneas divisorias en celular para que no rompan la cuadrícula */
+  .baner2-tienda .dividert {
+    display: none;
+  }
+
+  /* Ajustes opcionales para que las columnas se vean estéticas */
+  /* .colum {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .colum img {
+        max-width: 80px; 
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .colum h1 {
+        font-size: 14px;
+        margin: 0;
+    } */
+
+  .productos {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+
+  .card p {
+    font-size: 20px;
+    justify-self: center;
+    gap: 5;
+  }
+
+  .pedidos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-pedidos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colum-iz {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  /**********************ESCUELA*****************************************/
+
+  .evb-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-items: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  .evb-titulo {
+    margin-left: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .evb-contenido {
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+  }
+
+  /*****************************NOSOTROS****************************************/
+
+  .nos-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-mision-vision {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-modelo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-modelo-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin: 0;
+  }
+
+  .nos-modelo-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nos-modelo-img {
+    margin: 0;
+  }
+
+  .nos-modelo-iconos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================
+           LAPTOPS / TABLETS GRANDES (Hasta 1024px)
+   ========================================== */
+   @media (max-width: 1024px) {
+ 
+    /**************************NAVBAR*************************************/
+   
+    .menu {
+      width: 95%;
+      gap: 1.5rem;
+    }
+   
+    .menu img {
+      width: 85px;
+      height: 85px;
+    }
+   
+    .menu a {
+      font-size: 1.2rem;
+    }
+   
+    /*************************BANER INDEX*****************************************/
+   
+    .baner-general img {
+      height: 380px;
+    }
+   
+    .content-baner {
+      width: 90%;
+      height: auto;
+      gap: 16px 24px;
+      margin-bottom: 120px;
+    }
+   
+    .content-baner h1 {
+      font-size: 38px;
+    }
+   
+    .contenedor-imagenes {
+      width: 380px;
+      height: 380px;
+    }
+   
+    /**************************FOOTER*******************************/
+   
+    .content-marca {
+      margin-left: 40px;
+    }
+   
+    .content-contactos {
+      margin-right: 40px;
+    }
+   
+    .contact-item img {
+      width: 50px;
+      height: 50px;
+    }
+   
+    .divider {
+      height: 110px;
+    }
+   
+    /**************************ESCUELA VIDA BUENA*************************************/
+   
+    .evb-titulo {
+      margin-left: 180px;
+      font-size: 2rem;
+    }
+   
+    .evb-contenido {
+      margin-left: 60px;
+      width: 90%;
+      gap: 20px;
+    }
+   
+    .evb-foto {
+      max-width: 260px;
+      height: 200px;
+    }
+   
+    .evb-descripcion {
+      font-size: 0.95rem;
+      max-width: 260px;
+    }
+   
+    .evb-col-der {
+      width: 90%;
+    }
+   
+    .evb-servicio-icono {
+      width: 52px;
+      height: 52px;
+    }
+   
+    .evb-frase p {
+      font-size: 1.3rem;
+    }
+   
+    /**************************NOSOTROS*************************************/
+   
+    .nos-intro {
+      width: 90%;
+      gap: 24px;
+      margin-top: 80px;
+    }
+   
+    .nos-intro-texto p {
+      font-size: 1.1rem;
+    }
+   
+    .nos-intro-foto img {
+      max-width: 260px;
+      height: 200px;
+    }
+   
+    .nos-mision-vision {
+      width: 90%;
+      margin-top: 60px;
+      gap: 24px;
+    }
+   
+    .nos-card {
+      padding: 2.5rem;
+    }
+   
+    .nos-card h2 {
+      font-size: 1.3rem;
+    }
+   
+    .nos-card p {
+      font-size: 1.1rem;
+    }
+   
+    .nos-modelo {
+      width: 90%;
+    }
+   
+    .nos-modelo-titulo {
+      font-size: 3rem;
+    }
+   
+    .nos-modelo-img {
+      width: 80%;
+    }
+   
+    .nos-modelo-texto {
+      margin-right: 30px;
+      padding: 18px;
+    }
+   
+    .nos-modelo-texto p {
+      font-size: 1.05rem;
+    }
+   
+    .nos-modelo-iconos {
+      gap: 3rem;
+    }
+   
+    .nos-frase p {
+      font-size: 1.6rem;
+    }
+   
+    /**************************TIENDA*************************************/
+   
+    .baner2-tienda {
+      width: 90%;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+   
+    .baner2-tienda img {
+      width: 110px;
+      height: 110px;
+    }
+   
+    .baner2-tienda h2 {
+      font-size: 0.95rem;
+    }
+   
+    .dividert {
+      height: 100px;
+    }
+   
+    .productos {
+      gap: 1rem;
+      padding: 0 12px;
+    }
+   
+    .card {
+      min-width: 200px;
+      max-width: 420px;
+    }
+   
+    .card p {
+      font-size: 1.2rem;
+    }
+   
+    .productos h2 {
+      font-size: 1.7rem;
+    }
+   
+    .productos h3 {
+      font-size: 1.2rem;
+    }
+   
+    /**************************PEDIDOS*************************************/
+   
+    .content-pedidos {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      padding: 16px;
+      flex-direction: column;
+      gap: 30px;
+    }
+   
+    .colum-iz {
+      margin-right: 0;
+      gap: 0.75rem;
+    }
+   
+    .colum-der a {
+      width: 220px;
+      margin-top: 30px;
+    }
+   
+  }
+   

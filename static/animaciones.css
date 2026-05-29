@@ -1,0 +1,443 @@
+
+/* ============================================================
+   1. KEYFRAMES — definición de todas las animaciones
+   ============================================================ */
+
+/* Flotación suave (frutas del banner) */
+@keyframes flotar {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+  50%       { transform: translate(-50%, -50%) translateY(-18px); }
+}
+
+/* Zoom lento tipo Ken Burns (banners generales) */
+@keyframes kenBurns {
+  0%   { transform: scale(1);    }
+  100% { transform: scale(1.06); }
+}
+
+/* Fade + slide-up (elementos al entrar en pantalla) */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade simple (frases en cursiva) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Bounce suave (redes sociales en footer) */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);   }
+  40%       { transform: translateY(-8px); }
+  60%       { transform: translateY(-4px); }
+}
+
+/* Pulso suave (íconos de servicios) */
+@keyframes pulse {
+  0%, 100% { transform: scale(1);    }
+  50%       { transform: scale(1.12); }
+}
+
+/* Brillo de borde (cards de tienda) */
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 4px 16px rgba(86, 109, 87, 0.10); }
+  50%       { box-shadow: 0 8px 28px rgba(86, 109, 87, 0.30); }
+}
+
+/* Flotación que respeta el centrado original de las frutas */
+@keyframes flotarFrutas {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+    50%       { transform: translate(-50%, -50%) translateY(-16px); }
+  }
+  
+  /* Flotación del trazo verde sin romper su posición */
+  @keyframes flotarFondo {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+
+
+/* ============================================================
+   2. NAVBAR — subrayado deslizante al hover
+   ============================================================ */
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+  width: 100%;
+}
+
+.menu a {
+  transition: color 0.25s ease;
+}
+
+.menu a:hover {
+  color: var(--primary-color);
+}
+
+/* Logo del navbar — giro suave al hover */
+.menu img {
+  transition: transform 0.5s ease;
+}
+
+.menu img:hover {
+  transform: rotate(8deg) scale(1.05);
+}
+
+
+/* ============================================================
+   3. BANNER PRINCIPAL — flotación de frutas
+   ============================================================ */
+
+   .imagen-frutas {
+    animation: flotarFrutas 4s ease-in-out infinite;
+  }
+
+/* El trazo verde rota muy lentamente en sentido contrario */
+.imagen-fondo {
+    animation: flotarFondo 6s ease-in-out infinite;
+  }
+
+
+/* ============================================================
+   4. BANNER GENERAL — efecto Ken Burns
+   ============================================================ */
+
+.baner-general {
+  overflow: hidden;
+}
+
+.baner-general img {
+  animation: kenBurns 12s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+
+/* ============================================================
+   5. FRASES EN CURSIVA — fade-in al cargar
+   ============================================================ */
+
+.evb-frase,
+.nos-frase {
+  animation: fadeIn 1.4s ease 0.3s both;
+}
+
+
+/* ============================================================
+   6. TÍTULO PRINCIPAL (EVB) — fade + slide al cargar
+   ============================================================ */
+
+.evb-titulo {
+  animation: fadeSlideUp 0.8s ease 0.1s both;
+}
+
+.evb-col-izq {
+  animation: fadeSlideUp 0.9s ease 0.2s both;
+}
+
+.evb-col-der {
+  animation: fadeSlideUp 0.9s ease 0.35s both;
+}
+
+
+/* ============================================================
+   7. ÍCONOS DE SERVICIOS (EVB) — pulso al hover
+   ============================================================ */
+
+.evb-servicio-icono {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.evb-servicio:hover .evb-servicio-icono {
+  animation: pulse 0.6s ease;
+  box-shadow: 0 4px 14px rgba(86, 109, 87, 0.30);
+}
+
+.evb-servicio {
+  transition: transform 0.25s ease;
+}
+
+.evb-servicio:hover {
+  transform: translateX(6px);
+}
+
+/* Nombre del servicio — aparece más verde al hover */
+.evb-servicio-nombre {
+  transition: color 0.25s ease;
+}
+
+.evb-servicio:hover .evb-servicio-nombre {
+  color: var(--primary-color);
+}
+
+
+/* ============================================================
+   8. FOTO DE LA ESCUELA Y DE LA FINCA — zoom al hover
+   ============================================================ */
+
+.evb-foto,
+.nos-intro-foto img {
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.evb-foto:hover,
+.nos-intro-foto img:hover {
+  transform: scale(1.04);
+  box-shadow: 6px 10px 28px rgba(86, 109, 87, 0.28);
+}
+
+
+/* ============================================================
+   9. CARDS MISIÓN / VISIÓN — fade-slide + lift al hover
+   ============================================================ */
+
+.nos-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 16px;
+}
+
+.nos-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(86, 109, 87, 0.18);
+  background-color: rgba(155, 171, 141, 0.08);
+}
+
+.nos-card img {
+  transition: transform 0.4s ease;
+}
+
+.nos-card:hover img {
+  transform: rotate(6deg) scale(1.08);
+}
+
+
+/* ============================================================
+  10. ÍCONOS DEL MODELO DE BIENESTAR — rotación al hover
+   ============================================================ */
+
+.nos-icono-item img {
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.nos-icono-item:hover img {
+  transform: rotate(-8deg) scale(1.15);
+  box-shadow: 0 6px 18px rgba(86, 109, 87, 0.25);
+}
+
+/* Título del modelo — subrayado animado */
+.nos-modelo-titulo {
+  position: relative;
+  display: inline-block;
+}
+
+.nos-modelo-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--verde-palido), var(--primary-color));
+  border-radius: 2px;
+  animation: expandWidth 1.2s ease 0.5s forwards;
+}
+
+@keyframes expandWidth {
+  to { width: 70%; }
+}
+
+
+/* ============================================================
+  11. CARDS DE TIENDA — lift + brillo de borde al hover
+   ============================================================ */
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 36px rgba(86, 109, 87, 0.22);
+  border-color: var(--primary-color);
+}
+
+.card img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.07);
+}
+
+/* Precio — aparece más destacado al hover */
+.card h2 {
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover h2 {
+  color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+
+/* ============================================================
+  12. SECCIÓN "DE NUESTRA TIERRA" (tienda) — slide-in
+   ============================================================ */
+
+.content-pedidos {
+  transition: box-shadow 0.4s ease;
+}
+
+.content-pedidos:hover {
+  box-shadow: 0 8px 32px rgba(86, 109, 87, 0.14);
+}
+
+.colum-iz img {
+  transition: transform 0.5s ease;
+}
+
+.colum-iz img:hover {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+
+/* ============================================================
+  13. BOTONES (Ver tienda / Conocer más / WhatsApp) — elevación
+   ============================================================ */
+
+.content-baner a,
+.colum-der a {
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+}
+
+.content-baner a:hover,
+.colum-der a:hover {
+  transform: translateY(-3px);
+}
+
+/* El botón "Ver tienda" también hereda el efecto */
+.content-baner .vertienda {
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+}
+
+.content-baner .vertienda:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 6px 16px rgba(78, 88, 59, 0.30);
+}
+
+
+/* ============================================================
+  14. ÍCONOS DE REDES SOCIALES — bounce al hover
+   ============================================================ */
+
+.contact-item a {
+  display: inline-block;
+}
+
+.contact-item img {
+  transition: transform 0.15s ease;
+}
+
+.contact-item a:hover img {
+  animation: bounce 0.5s ease;
+}
+
+
+/* ============================================================
+  15. BANER2 TIENDA (íconos de características) — float al hover
+   ============================================================ */
+
+.baner2-tienda .colum {
+  transition: transform 0.3s ease;
+}
+
+.baner2-tienda .colum:hover {
+  transform: translateY(-6px);
+}
+
+.baner2-tienda img {
+  transition: transform 0.4s ease;
+}
+
+.baner2-tienda .colum:hover img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+
+/* ============================================================
+  16. NOSOTROS — intro texto fade-in al cargar
+   ============================================================ */
+
+.nos-intro-texto p:first-child {
+  animation: fadeSlideUp 0.8s ease 0.1s both;
+}
+
+.nos-intro-texto p:last-child {
+  animation: fadeSlideUp 0.8s ease 0.3s both;
+}
+
+.nos-intro-foto {
+  animation: fadeSlideUp 0.9s ease 0.4s both;
+}
+
+
+/* ============================================================
+  17. CAJA DE TEXTO DEL MODELO DE BIENESTAR — hover suave
+   ============================================================ */
+
+.nos-modelo-texto {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.nos-modelo-texto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(86, 109, 87, 0.18);
+}
+
+
+/* ============================================================
+  18. FOOTER — logo gira al hover
+   ============================================================ */
+
+.content-marca img {
+  transition: transform 0.5s ease;
+}
+
+.content-marca img:hover {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+/* Items de navegación del footer */
+.content-navegacion ul li {
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  cursor: default;
+}
+
+.content-navegacion ul li:hover {
+  color: var(--primary-color);
+  padding-left: 6px;
+}
