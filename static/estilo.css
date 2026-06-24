@@ -26,6 +26,13 @@
   display: block;      /* Elimina espacios en blanco extraños debajo de la imagen */
 }
 
+.baner-index img{
+  width: 100%;
+  height: 550px;
+  object-fit: cover;   /* ¡CLAVE! Corta los bordes excedentes en lugar de aplastar la foto */
+  display: block;      /* Elimina espacios en blanco extraños debajo de la imagen */
+}
+
 .body h1{
   width: 0px;
   height: 0px;
@@ -44,8 +51,8 @@
 }
 
 .menu img {
-  width: 110px;
-  height: 110px;
+  width: 200px;
+  height: 200px;
 }
 
 .menu li {
@@ -57,7 +64,7 @@
   text-decoration: none;
   color: #000;
   font-family: var(--secondary-font);
-  font-size: 1.5rem;
+  font-size: 2rem;
   position: relative;
 }
 
@@ -70,12 +77,11 @@
 .content-baner {
   margin-top: 50px;
   width: 80%;
-  margin-bottom: 200px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  gap: 20px 40px;
+  
   justify-content: center;
   height: 500px;
 }
@@ -127,6 +133,20 @@
   border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
   border: 4px solid var(--verde-palido);
   box-shadow: 4px 6px 18px rgba(86, 109, 87, 0.18);
+}
+
+.index-frase {
+  text-align: center;
+  margin-top: 300px;
+  /* menos espacio antes de la frase */
+  padding: 0px 300px;
+}
+
+.index-frase p {
+  font-family: var(--primary-font);
+  font-size: 2.4rem;
+  color: var(--primary-color);
+  font-style: italic;
 }
 
 .content-baner a {
@@ -214,7 +234,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 }
 
 /* --- MARCA --- */
@@ -254,7 +274,15 @@
   text-align: left;
 }
 
-.content-navegacion ul li {
+.content-navegacion ul li a{
+  font-size: 13.5px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 6px;
+  font-family: 'Georgia', serif;
+}
+
+.content-navegacion {
   font-size: 13.5px;
   color: #222;
   margin-bottom: 6px;
@@ -264,14 +292,23 @@
 /* --- CONTACTOS --- */
 .content-contactos {
   margin-right: 100px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
+  gap: 8px;
 }
 
-.content-contactos h2 {
-  width: 100%;
+.content-contactos h3 {
+  grid-column: span 2;
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d4a1e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 15px;                
 }
 
 .contact-item {
@@ -353,18 +390,40 @@
 
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   /* menos espacio entre foto y texto */
 }
 
-.evb-foto {
+.evb-col-izq p {
+  font-size: 1.3rem;
+  /* menos espacio entre foto y texto */
+}
+
+
+/* Galería de dos fotos en la columna izquierda */
+.evb-galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
   width: 100%;
-  max-width: 320px;
-  height: 240px;
+  max-width: 340px;
+}
+
+.evb-foto {
+  width: 120%;
+  height: 260px;
   object-fit: cover;
-  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-  border: 4px solid var(--verde-palido);
   box-shadow: 4px 6px 18px rgba(86, 109, 87, 0.18);
+}
+
+/* Primera foto: esquinas redondeadas arriba-izq y abajo-izq */
+.evb-foto-1 {
+   border-radius: 10px;
+}
+
+/* Segunda foto: esquinas redondeadas arriba-der y abajo-der */
+.evb-foto-2 {
+   border-radius: 10px;
 }
 
 .evb-descripcion {
@@ -403,7 +462,7 @@
 
 .evb-servicio-nombre {
   font-family: var(--secondary-font);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: #3a3a3a;
   font-weight: 400;
 }
@@ -417,7 +476,7 @@
 
 .evb-frase p {
   font-family: var(--primary-font);
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   color: var(--primary-color);
   font-style: italic;
 }
@@ -534,13 +593,58 @@
   line-height: 1.7;
 }
 
+.nos-informacion {
+  margin-top: 150px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column; /* TEXTO ARRIBA, FOTO ABAJO */
+  align-items: center;
+}
+
+.nos-informacion-texto {
+  width: 100%;
+}
+
+.nos-informacion-texto p {
+  font-family: var(--secondary-font);
+  font-size: 1.5rem;
+  color: #444;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.nos-informacion-texto h2 {
+  font-family: var(--secondary-font);
+  font-size: 1.9rem;
+  color: #6B8E6B;
+  text-align: center;
+}
+
+.nos-informacion-foto {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.nos-informacion-foto img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 30%;
+  box-shadow: 4px 6px 18px rgba(86, 109, 87, 0.18);
+  }
+
+
 /* --- Modelo de Bienestar --- */
 .nos-modelo {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 0px;
 }
 
 .nos-modelo-titulo {
@@ -555,27 +659,32 @@
 .nos-modelo-contenido {
   display: grid;
   grid-template-columns: 1.40fr 0.60fr;
-  gap: 40px;
+  gap: 0px;
   align-items: center;
   width: 100%;
 }
 
 .nos-modelo-img {
-  width: 70%;
+  width: 60%;
   object-fit: contain;
+}
+
+.integral img{
+  margin-top: 70px;
+  width: 100%;
 }
 
 .nos-modelo-texto {
   justify-self: start;
   background-color: #d4e8c2;
   border-radius: 12px;
-  padding: 24px;
+  padding: 30px;
   margin-right: 100px;
 }
 
 .nos-modelo-texto p {
   font-family: var(--secondary-font);
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: #3a3a3a;
   line-height: 1.7;
 }
@@ -595,6 +704,7 @@
 }
 
 .nos-frase {
+  margin-top: 70px;
   text-align: center;
   padding: 10px 0 20px 0;
 }
@@ -636,6 +746,25 @@
   color: var(--secondary-color);
   font-family: var(--secondary-font);
   font-size: 1.1rem;
+  /* Ajusta según veas necesario */
+  margin: 0;
+}
+
+.baner3-tienda {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  
+}
+
+.baner3-tienda img {
+  width: 130px;
+  height: 130px;
+}
+
+.baner3-tienda h2{
+  color: var(--secondary-color);
+  font-family: var(--secondary-font);
+  font-size: 1.2rem;
   /* Ajusta según veas necesario */
   margin: 0;
 }
@@ -712,12 +841,21 @@
   width: 100%;
 }
 
+.pedidos img{
+  width: 180px;
+  height: 180px;
+}
+
+.parte-frase p{
+  font-size: 1.8rem;
+}
+
 .content-pedidos {
   margin-top: 100px;
   margin-bottom: 100px;
-  /* width: 80%; */
+  width: 60%;
+  height: auto;
   display: flex;
-  justify-self: center;
   justify-content: space-around;
   align-items: center;
   padding: 20px;
@@ -743,11 +881,13 @@
   grid-column: 2;
   font-family: var(--secondary-font);
   color: var(--secondary-color);
+  font-size: 1.6rem;
 }
 
 .colum-iz p {
   grid-column: 2;
   font-family: var(--secondary-font);
+  font-size: 1.2rem;
 }
 
 .colum-der h2 {
@@ -790,6 +930,8 @@
 
   transition: all 0.3s ease;
 }
+
+
 
 /* ==========================================
            CELULARES (Hasta 480px)
@@ -880,25 +1022,6 @@
     display: none;
   }
 
-  /* Ajustes opcionales para que las columnas se vean estéticas */
-  /* .colum {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .colum img {
-        max-width: 80px; 
-        height: auto;
-        margin-bottom: 10px;
-    }
-
-    .colum h1 {
-        font-size: 14px;
-        margin: 0;
-    } */
-
   .productos {
     display: flex;
     flex-direction: column;
@@ -914,11 +1037,17 @@
   .pedidos {
     display: flex;
     flex-direction: column;
+    padding-left: auto;
+    margin-right: auto;
   }
 
   .content-pedidos {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    align-items: center;
+    text-align: center;
   }
 
   .colum-iz {
@@ -950,12 +1079,23 @@
     margin: 0%;
   }
 
+  .evb-galeria{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+    text-align: center;
+  }
+
   /*****************************NOSOTROS****************************************/
 
   .nos-main {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:start;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0rem;
   }
 
   .nos-intro {
@@ -982,6 +1122,11 @@
     align-items: center;
     justify-self: center;
     margin: 0;
+  }
+
+  .nos-informacion{
+    margin-bottom: auto;
+    margin-right: auto;
   }
 
   .nos-modelo-contenido {
@@ -1253,6 +1398,12 @@
       gap: 16px 24px;
       margin-bottom: 120px;
     }
+    
+    .index-frase{
+      margin-top: -50px;
+      margin-bottom: 50px;
+      padding: 0;
+    }
    
     .content-baner h1 {
       font-size: 38px;
@@ -1260,7 +1411,7 @@
    
     .contenedor-imagenes {
       width: 380px;
-      height: 380px;
+      height: 380px
     }
    
     /**************************FOOTER*******************************/
@@ -1295,9 +1446,12 @@
       gap: 20px;
     }
    
+    .evb-galeria {
+      max-width: 280px;
+    }
+
     .evb-foto {
-      max-width: 260px;
-      height: 200px;
+      height: 140px;
     }
    
     .evb-descripcion {
@@ -1314,9 +1468,6 @@
       height: 52px;
     }
    
-    .evb-frase p {
-      font-size: 1.3rem;
-    }
    
     /**************************NOSOTROS*************************************/
    
